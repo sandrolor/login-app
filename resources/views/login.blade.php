@@ -11,7 +11,7 @@
 @endif
 
 @if (auth()->check())
-Already logged in {{ $usuario }} - <a href="{{ route('login.destroy') }}">Logout</a>
+Already logged in {{ $usuario }} - <a href="{{ route('login.destroy') }}">Logout</a> - <a href="{{ route('logado.index') }}">Logado</a>
 @else
 @error('error')
 <span>{{ $message }}</span>
