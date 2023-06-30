@@ -8,7 +8,14 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
-        return view('login');
+
+        if (auth()->check()){
+            $usuario = auth()->user()->name;
+        }else{
+            $usuario = null;
+        }
+        
+        return view('login', compact('usuario'));
     }
 
     public function store(Request $request){
